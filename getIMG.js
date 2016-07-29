@@ -1,7 +1,7 @@
 javascript:(function () {
     if (typeof ZHJ10W1lcg === 'undefined') {/*Append jQuery into Documents Head*/
         var jQuery = document.createElement('script');
-        jQueryScript.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js');
+        jQuery.setAttribute('src', '//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js');
         var head = document.getElementsByTagName('head');
         head[0].appendChild(jQuery);
         ZHJ10W1lcg = true;
