@@ -34,15 +34,15 @@ javascript:(function () {
                 if ($(hoverElem).is('IMG')) {//Hovered element is image
                     $('#IMGlist').show()
                         .append('Found:<br />' +
-                            '<div style="overflow:hidden;width:100px;height:100px;float:left;clear:both;"><img style="max-width:200%;" src="' + $(hoverElem).attr('SRC') + '"/></div>' +
-                            '<div style="height:100px;float:left;">URL:<input style="max-height:25px" value="' + $(hoverElem).attr('SRC') + '" /></div><br />');
+                            '<div style="overflow:hidden;width:100px;height:100px;float:left;clear:both;"><img style="max-width:150%;" src="' + $(hoverElem).attr('SRC') + '"/></div>' +
+                            '<div style="height:100px;float:left;">URL:<input style="max-height:32px" value="' + $(hoverElem).attr('SRC') + '" /></div><br />');
                     found = true;//Output IMGs url
                 } else {
                     if ($(hoverElem).parent().find('IMG').length) {//Elements parent contains at least one image
                         $('#IMGlist').show().append('Found:<br />');
                         $(hoverElem).parent().find('IMG').each(function () {
-                            $('#IMGlist').append('<div style="overflow:hidden;width:25px;height:25px;float:left;clear:both;"><img style="max-width:200%;" src="' + $(this).attr('SRC') + '"/></div>' +
-                                '<div style="height:15x;float:left;">URL:<input style="max-height:25px" value="' + $(this).attr('SRC') + '" /></div><br />');
+                            $('#IMGlist').append('<div style="overflow:hidden;width:32px;height:32px;float:left;clear:both;"><img style="max-width:200%;" src="' + $(this).attr('SRC') + '"/></div>' +
+                                '<div style="height:15x;float:left;">URL:<input style="max-height:32px" value="' + $(this).attr('SRC') + '" /></div><br />');
                         });
                         found = true;//Output list of IMG URLs
                     } else {//Elements parent does not contain any images, try looking for image backgrounds
@@ -50,8 +50,8 @@ javascript:(function () {
                             if ($(this).css('background-image') != 'none') {//has Image background
                                 bgIMG = $(this).css('background-image');
                                 $('#IMGlist').show()
-                                    .append('<div style="overflow:hidden;width:25px;height:25px;float:left;clear:both;"><img style="max-width:200%;" src="' + bgIMG.substring(5, bgIMG.length - 2) + '"/></div>' +
-                                        '<div style="height:25px;float:left;">URL:<input style="max-height:25px" value="' + bgIMG.substring(5, bgIMG.length - 2) + '" /></div><br />');
+                                    .append('<div style="overflow:hidden;width:32px;height:32px;float:left;clear:both;"><img style="max-width:200%;" src="' + bgIMG.substring(5, bgIMG.length - 2) + '"/></div>' +
+                                        '<div style="height:32px;float:left;">URL:<input style="max-height:32px" value="' + bgIMG.substring(5, bgIMG.length - 2) + '" /></div><br />');
                                 found = true;//Output list of IMG URLs
                             }
                         });
@@ -63,5 +63,5 @@ javascript:(function () {
             $("body *").bind("click", preventer);//Prevent all elements from their natural actions from mouse click (following links)
             $("body").bind("click", searchIMGer);//Add listener to body element that will trigger Search for images on click function
         });
-    }, 700);//Wait a bit to let everything settle and load
+    }, 250);//Wait a bit to let everything settle and load
 })();
