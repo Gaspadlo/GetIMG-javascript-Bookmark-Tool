@@ -35,14 +35,14 @@ javascript:(function () {
                     $('#IMGlist').show()
                         .append('Found:<br />' +
                             '<div style="overflow:hidden;width:100px;height:100px;float:left;clear:both;"><img style="max-width:200%;" src="' + $(hoverElem).attr('SRC') + '"/></div>' +
-                            '<div style="height:100px;float:left;">URL:<input style="max-height:25px" value="' + $(hoverElem).attr('SRC') + ' /></div><br />');
+                            '<div style="height:100px;float:left;">URL:<input style="max-height:25px" value="' + $(hoverElem).attr('SRC') + '" /></div><br />');
                     found = true;//Output IMGs url
                 } else {
                     if ($(hoverElem).parent().find('IMG').length) {//Elements parent contains at least one image
                         $('#IMGlist').show().append('Found:<br />');
                         $(hoverElem).parent().find('IMG').each(function () {
                             $('#IMGlist').append('<div style="overflow:hidden;width:25px;height:25px;float:left;clear:both;"><img style="max-width:200%;" src="' + $(this).attr('SRC') + '"/></div>' +
-                                '<div style="height:15x;float:left;">URL:<input style="max-height:25px" value="' + $(this).attr('SRC') + ' /></div><br />');
+                                '<div style="height:15x;float:left;">URL:<input style="max-height:25px" value="' + $(this).attr('SRC') + '" /></div><br />');
                         });
                         found = true;//Output list of IMG URLs
                     } else {//Elements parent does not contain any images, try looking for image backgrounds
